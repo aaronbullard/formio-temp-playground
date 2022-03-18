@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Form from './views/Form.vue';
 import Builder from './views/Builder.vue';
+import BuilderLocal from './views/BuilderLocal.vue';
 
 Vue.use(Router);
 
@@ -33,5 +34,10 @@ export default new Router({
       name: 'builder',
       component: Builder,
     },
+    {
+        path: '/builder-local',
+        name: 'builder-local',
+        component: BuilderLocal,
+      },
   ],
 });

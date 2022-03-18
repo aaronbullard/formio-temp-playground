@@ -7,10 +7,7 @@
 </template>
 
 <script>
-// import { Component, Vue } from 'vue-property-decorator';
 import { FormBuilder } from 'vue-formio';
-import { Formio } from 'formiojs';
-import module from './../modules/module.js';
 
 export default {
     components: {
@@ -41,32 +38,21 @@ export default {
             fetch(this.formUrl, {
                 method: 'PUT',
                 headers: {
-                  'Content-type': 'application/json; charset=UTF-8' // Indicates the content
+                  'Content-type': 'application/json; charset=UTF-8', // Indicates the content
                 },
                 body: JSON.stringify(this.form),
             })
                 .then((res) => res.json())
                 .then((form) => {
-                    console.log({form});
+                    // console.log({form});
                     this.fetched = false;
                     this.form = form;
                     this.fetched = true;
                 })
-                .catch((e) => console.log(e));
+                .catch((e) => {
+                    // console.log(e)
+                });
         },
     },
 };
-
-// @Component({
-//   components: {
-//     FormBuilder,
-//   },
-//   data: () => {
-//     return {
-//       formId: '616dcb57b35ff10faecbc790',
-//       form: {},
-//     };
-//   },
-// })
-// export default class Home extends Vue {}
 </script>

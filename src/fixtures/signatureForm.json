@@ -1,0 +1,224 @@
+{
+    "_id": "616dcb57b35ff10faecbc790",
+    "type": "form",
+    "tags": [],
+    "owner": "616dbf592293f6c2b8dcdae8",
+    "components": [
+        {
+            "title": "Client Details",
+            "breadcrumbClickable": true,
+            "buttonSettings": {
+                "previous": true,
+                "cancel": true,
+                "next": true
+            },
+            "scrollToTop": false,
+            "collapsible": false,
+            "key": "page1",
+            "type": "panel",
+            "label": "Page 1",
+            "components": [
+                {
+                    "label": "First Name",
+                    "tableView": true,
+                    "key": "firstName",
+                    "tags": [
+                        "contraindication"
+                    ],
+                    "type": "textfield",
+                    "input": true
+                },
+                {
+                    "label": "Last Name",
+                    "tableView": true,
+                    "key": "lastName",
+                    "type": "textfield",
+                    "input": true
+                },
+                {
+                    "label": "Birthday",
+                    "hideInputLabels": false,
+                    "inputsLabelPosition": "top",
+                    "useLocaleSettings": false,
+                    "tableView": false,
+                    "fields": {
+                        "day": {
+                            "hide": false
+                        },
+                        "month": {
+                            "hide": false
+                        },
+                        "year": {
+                            "hide": false
+                        }
+                    },
+                    "key": "birthday",
+                    "type": "day",
+                    "input": true,
+                    "defaultValue": "00/00/0000"
+                },
+                {
+                    "label": "Sketchpad",
+                    "imageUrl": "https://media.nationalgeographic.org/assets/photos/121/314/5b444531-678f-4b36-b66f-df1f37ea7942.jpg",
+                    "tableView": false,
+                    "key": "sketchpad",
+                    "type": "sketchpad",
+                    "input": true
+                },
+                {
+                    "label": "Signature",
+                    "tableView": false,
+                    "key": "signature",
+                    "type": "signature",
+                    "input": true
+                }
+            ],
+            "input": false,
+            "tableView": false
+        },
+        {
+            "title": "Other Notes",
+            "breadcrumbClickable": true,
+            "buttonSettings": {
+                "previous": true,
+                "cancel": true,
+                "next": true
+            },
+            "scrollToTop": false,
+            "collapsible": false,
+            "key": "page2",
+            "type": "panel",
+            "label": "Page 2",
+            "components": [
+                {
+                    "label": "Subject",
+                    "tableView": true,
+                    "key": "textField",
+                    "type": "textfield",
+                    "input": true
+                },
+                {
+                    "label": "Body",
+                    "autoExpand": false,
+                    "tableView": true,
+                    "key": "textArea1",
+                    "type": "textarea",
+                    "input": true
+                }
+            ],
+            "input": false,
+            "tableView": false
+        }
+    ],
+    "revisions": "",
+    "_vid": 0,
+    "title": "Test",
+    "display": "wizard",
+    "access": [
+        {
+            "roles": [],
+            "type": "create_own"
+        },
+        {
+            "roles": [],
+            "type": "create_all"
+        },
+        {
+            "roles": [],
+            "type": "read_own"
+        },
+        {
+            "roles": [
+                "616dbf87823dd67ba1ebe4e4",
+                "616dbf87823dd6005aebe4ea",
+                "616dbf87823dd6512cebe4f2"
+            ],
+            "type": "read_all"
+        },
+        {
+            "roles": [],
+            "type": "update_own"
+        },
+        {
+            "roles": [],
+            "type": "update_all"
+        },
+        {
+            "roles": [],
+            "type": "delete_own"
+        },
+        {
+            "roles": [],
+            "type": "delete_all"
+        },
+        {
+            "roles": [],
+            "type": "team_read"
+        },
+        {
+            "roles": [],
+            "type": "team_write"
+        },
+        {
+            "roles": [],
+            "type": "team_admin"
+        }
+    ],
+    "submissionAccess": [
+        {
+            "roles": [
+                "616dbf87823dd6512cebe4f2"
+            ],
+            "type": "create_own"
+        },
+        {
+            "roles": [],
+            "type": "create_all"
+        },
+        {
+            "roles": [],
+            "type": "read_own"
+        },
+        {
+            "roles": [],
+            "type": "read_all"
+        },
+        {
+            "roles": [],
+            "type": "update_own"
+        },
+        {
+            "roles": [],
+            "type": "update_all"
+        },
+        {
+            "roles": [],
+            "type": "delete_own"
+        },
+        {
+            "roles": [],
+            "type": "delete_all"
+        },
+        {
+            "roles": [],
+            "type": "team_read"
+        },
+        {
+            "roles": [],
+            "type": "team_write"
+        },
+        {
+            "roles": [],
+            "type": "team_admin"
+        }
+    ],
+    "controller": "",
+    "properties": {},
+    "settings": {},
+    "name": "test",
+    "path": "test",
+    "project": "616dbf87823dd67843ebe4dd",
+    "created": "2021-10-18T19:30:31.507Z",
+    "modified": "2022-03-09T20:29:17.727Z",
+    "machineName": "xzjoppmhtprdmuv:test"
+}

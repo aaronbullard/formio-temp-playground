@@ -1,39 +1,43 @@
 <template>
-  <div class="home">
-    <Form src="https://xzjoppmhtprdmuv.form.io/test" />
+  <div class="home container">
+    <Form 
+        :form="src"
+        :submission="submission"
+        @foobar="submit"
+    />
   </div>
 </template>
 
 <script>
-// import { Component, Vue } from 'vue-property-decorator';
 import { Form } from 'vue-formio';
-import module from './../modules/module.js';
+import ClientForm from '@/fixtures/clientForm.json';
+
+/**
+ * Files and signature store as base64
+ * Base64 -> PDF = https://base64.online/decoders/decode-base64-to-pdf
+ */
 
 export default {
+    name: 'FormPage',
     components: {
         Form,
     },
-    created() {
-        window.Formio.registerPlugin({
-            priority: 0,
-            init(formio) {
-                formio.events.onAny(function(event){
-                    console.log({event})
-                })
+    data() {
+        return {
+            src: 'https://xzjoppmhtprdmuv.form.io/test',
+            fixture: ClientForm,
+            submission: {
+                data: {
+                    firstName: 'Aaron',
+                    lastName: 'Bullard',
+                },
             },
-            preRequest(request) {
-                console.log({request})
-            },
-            deregister() {
-                console.log('deregistered testPlugin')
-            }
-        }, 'testPlugin');
-    }
+        };
+    },
+    methods: {
+        submit(payload) {
+            console.log(payload);
+        },
+    },
 };
-// @Component({
-//   components: {
-//     Form,
-//   },
-// })
-// export default class Home extends Vue {}
 </script>
