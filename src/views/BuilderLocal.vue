@@ -1,61 +1,72 @@
 <template>
   <div class="home container">
-    <img alt="Vue logo" src="../assets/logo.png">
     <FormBuilder
         ref="formbuilder"
         :form="form"
         :options="options"
     />
-    <button class="btn btn-primary" @click="pageSwap">Swap Pages</button>
   </div>
 </template>
 
 <script>
 import { FormBuilder } from 'vue-formio';
-import ClientForm from '@/fixtures/clientForm.json';
+import CustomForm from '@/fixtures/custom.json';
+import CheckMatrix from '@/custom/CheckMatrixLight/components/CheckMatrix.js';
+
+const originalEditForm = window.Formio.Components.components.textfield.editForm;
+const originalEditFormTabs = originalEditForm().components.find(obj => obj.key === 'tabs');
 
 export default {
     components: {
         FormBuilder,
     },
+    mounted() {
+        console.log({
+            editForm: originalEditForm(),
+            originalEditFormTabs
+        });
+        
+        window.Formio.Components.components.textfield.editForm = this.editForm;
+    },
     data() {
       return {
-        form: ClientForm,
+        form: CustomForm,
         options: {
-            tags: ['one'],
-            noDefaultSubmitButton: true,
-            editForm: this.editForm,
-            // builder: {
-            //     customBasic: {
-            //         title: 'Basic Components',
-            //         default: true,
-            //         weight: 0,
-            //         components: {
-            //             input: true
-            //         }
-            //     }
-            // }
-        }
+            namespace: "Custom",
+            builder: {
+                basic: {
+                    components: {
+                        checkmatrix: {
+                            title: 'Check Matrix',
+                            key: 'checkmatrix',
+                            icon: 'check-square',
+                            schema: CheckMatrix.schema(),
+                        },
+                        randovue: {
+                            title: 'Rando Vue',
+                            key: 'randovue',
+                            // schema: CheckMatrix.schema(),
+                        },
+                    }
+                }
+            }
+        },
       };
-    },
-    methods: {
-        pageSwap() {
-            // console.log("pageSwap");
-            const form = {...this.form};
-            const components = [...this.form.components];
-            form.components[0] = components[1];
-            form.components[1] = components[0];
-            this.form = form;
-        },
-        update(payload) {
-            console.log({update: payload});
-        },
     },
     computed: {
         editForm() {
             return () => {
                 return {
-                    components: this.form.components
+                    components: [
+                        {type: 'hidden', key: 'type'},
+                        {
+                            key: "tabs",
+                            type: "tabs",
+                            components: originalEditFormTabs.components.filter(comp => {
+                                return comp.key === 'display';
+                            })
+                        }
+                    ]
                 }
             }
         }

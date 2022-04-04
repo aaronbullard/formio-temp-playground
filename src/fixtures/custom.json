@@ -1,0 +1,51 @@
+{
+    "_id": "local",
+    "components": [
+        {
+            "label": "First Name",
+            "tableView": true,
+            "key": "firstName",
+            "tags": [
+                "contraindication"
+            ],
+            "type": "textfield",
+            "input": true
+        },
+        {
+            "label": "Last Name",
+            "tableView": true,
+            "key": "lastName",
+            "type": "textfield",
+            "input": true
+        },
+        {
+            "type": "checkmatrix",
+            "numRows": 2,
+            "numCols": 2,
+            "key": "checkmatrix",
+            "label": "Check Matrix",
+            "tableView": false,
+            "input": true
+        },
+        {
+            "label": "Rando Vue",
+            "tableView": false,
+            "key": "randovue",
+            "type": "randovue",
+            "input": true,
+            "widget": {
+              "type": "input"
+            }
+        },
+        {
+            "label": "Submit",
+            "action": "event",
+            "showValidations": false,
+            "tableView": false,
+            "key": "submit",
+            "type": "button",
+            "input": false,
+            "event": "foobar"
+        }
+    ]
+}

@@ -1,7 +1,9 @@
 <template>
   <div class="home container">
     <Form 
-        :form="src"
+        ref="form"
+        :form="form"
+        :options="options"
         :submission="submission"
         @foobar="submit"
     />
@@ -11,6 +13,8 @@
 <script>
 import { Form } from 'vue-formio';
 import ClientForm from '@/fixtures/clientForm.json';
+import CustomForm from '@/fixtures/custom.json';
+import Counter from '@/components/Counter';
 
 /**
  * Files and signature store as base64
@@ -21,22 +25,35 @@ export default {
     name: 'FormPage',
     components: {
         Form,
+        Counter
+    },
+    mounted() {
+        // const spinners = this.$refs.form.$el.querySelectorAll('div[ref="fileProcessingLoader"]');
+        // console.log({spinners});
+        // spinners.forEach(spinner => spinner.style.display = 'none');
     },
     data() {
         return {
-            src: 'https://xzjoppmhtprdmuv.form.io/test',
-            fixture: ClientForm,
+            remote: 'https://xzjoppmhtprdmuv.form.io/test',
             submission: {
                 data: {
                     firstName: 'Aaron',
                     lastName: 'Bullard',
                 },
             },
+            options: {
+                namespace: 'formio',
+            }
         };
+    },
+    computed: {
+        form() {
+            return CustomForm;
+        }
     },
     methods: {
         submit(payload) {
-            console.log(payload);
+            console.log({payload});
         },
     },
 };

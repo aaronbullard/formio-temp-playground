@@ -56,6 +56,31 @@
                     "type": "day",
                     "input": true,
                     "defaultValue": "00/00/0000"
+                },
+                {
+                    "label": "Upload",
+                    "tableView": false,
+                    "storage": "base64",
+                    "uploadOnly": true,
+                    "webcam": false,
+                    "fileTypes": [
+                        {
+                            "label": "",
+                            "value": ""
+                        }
+                    ],
+                    "filePattern": "application/pdf",
+                    "persistent": false,
+                    "key": "file",
+                    "type": "file",
+                    "input": true
+                },
+                {
+                    "type": "checkmatrix",
+                    "numRows": 6,
+                    "numCols": 6,
+                    "key": "checkmatrix",
+                    "label": "Check Matrix"
                 }
             ],
             "input": false,
@@ -98,7 +123,7 @@
     "revisions": "",
     "_vid": 0,
     "title": "Test",
-    "display": "wizard",
+    "display": "form",
     "access": [
         {
             "roles": [],
