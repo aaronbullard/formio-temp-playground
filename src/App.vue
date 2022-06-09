@@ -4,7 +4,8 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/form">Form</router-link> |
       <router-link to="/builder">Form Builder</router-link> | 
-      <router-link to="/builder-local">Form Builder Local</router-link>
+      <router-link to="/builder-local">Form Builder Local</router-link> | 
+      <router-link to="/submission">Submission</router-link>
     </div>
     <router-view/>
   </div>

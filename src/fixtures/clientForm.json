@@ -56,31 +56,6 @@
                     "type": "day",
                     "input": true,
                     "defaultValue": "00/00/0000"
-                },
-                {
-                    "label": "Upload",
-                    "tableView": false,
-                    "storage": "base64",
-                    "uploadOnly": true,
-                    "webcam": false,
-                    "fileTypes": [
-                        {
-                            "label": "",
-                            "value": ""
-                        }
-                    ],
-                    "filePattern": "application/pdf",
-                    "persistent": false,
-                    "key": "file",
-                    "type": "file",
-                    "input": true
-                },
-                {
-                    "type": "checkmatrix",
-                    "numRows": 6,
-                    "numCols": 6,
-                    "key": "checkmatrix",
-                    "label": "Check Matrix"
                 }
             ],
             "input": false,
@@ -114,6 +89,16 @@
                     "key": "textArea1",
                     "type": "textarea",
                     "input": true
+                },
+                {
+                    "label": "Submit",
+                    "action": "event",
+                    "showValidations": false,
+                    "tableView": false,
+                    "key": "submit",
+                    "type": "button",
+                    "input": false,
+                    "event": "foobar"
                 }
             ],
             "input": false,

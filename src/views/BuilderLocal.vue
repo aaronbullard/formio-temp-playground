@@ -4,6 +4,7 @@
         ref="formbuilder"
         :form="form"
         :options="options"
+        @submit="onSubmit"
     />
   </div>
 </template>
@@ -12,6 +13,7 @@
 import { FormBuilder } from 'vue-formio';
 import CustomForm from '@/fixtures/custom.json';
 import CheckMatrix from '@/custom/CheckMatrixLight/components/CheckMatrix.js';
+import RandoVue from '@/custom/Rando/components/RandoVue.js';
 
 const originalEditForm = window.Formio.Components.components.textfield.editForm;
 const originalEditFormTabs = originalEditForm().components.find(obj => obj.key === 'tabs');
@@ -45,7 +47,7 @@ export default {
                         randovue: {
                             title: 'Rando Vue',
                             key: 'randovue',
-                            // schema: CheckMatrix.schema(),
+                            schema: RandoVue.schema(),
                         },
                     }
                 }
@@ -63,12 +65,18 @@ export default {
                             key: "tabs",
                             type: "tabs",
                             components: originalEditFormTabs.components.filter(comp => {
+                                console.log({comp});
                                 return comp.key === 'display';
                             })
                         }
                     ]
                 }
             }
+        }
+    },
+    methods: {
+        onSubmit(payload) {
+            console.log({payload})
         }
     }
 };

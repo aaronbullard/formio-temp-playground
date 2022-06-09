@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Form from './views/Form.vue';
 import Builder from './views/Builder.vue';
 import BuilderLocal from './views/BuilderLocal.vue';
+import Submission from './views/Submission.vue';
 
 Vue.use(Router);
 
@@ -32,6 +33,11 @@ export default new Router({
         path: '/builder-local',
         name: 'builder-local',
         component: BuilderLocal,
-      },
+    },
+    {
+        path: '/submission',
+        name: 'submission',
+        component: Submission,
+    },
   ],
 });
